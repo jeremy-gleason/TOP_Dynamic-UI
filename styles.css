@@ -1,3 +1,49 @@
+#carousel {
+  display: flex;
+  align-items: center;
+}
+
+#container {
+  height: 200px;
+  width: 320px;
+  border: 1px solid black;
+  overflow: hidden;
+  position: relative;
+}
+
+#slider-content {
+  display: flex;
+  position: absolute;
+}
+
+.slider-img {
+  width: 320px;
+}
+
+.arrow-img {
+  height: 25px;
+}
+
+#dots-container {
+  width: 404px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-dot {
+  height: 4px;
+  width: 4px;
+  border: 3px solid gray;
+  border-radius: 100%;
+}
+
+.selected {
+  background-color: gray;
+}
+
+/* */
+
 nav {
   position: relative;
   display: flex;
