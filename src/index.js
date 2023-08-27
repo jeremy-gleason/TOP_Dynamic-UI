@@ -31,14 +31,17 @@ dotsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("nav-dot")) {
     slideIndex = parseInt(e.target.id.split("-")[1]);
     updateNav();
+    resetInterval();
   }
 });
 
 let slideIndex = 0;
+let slideInterval;
 
 const moveRight = () => {
   slideIndex = (slideIndex + 1) % 4;
   updateNav();
+  resetInterval();
 };
 
 const moveLeft = () => {
@@ -47,12 +50,22 @@ const moveLeft = () => {
     slideIndex = 3;
   }
   updateNav();
+  resetInterval();
 };
 
 const updateNav = () => {
-  sliderContent.style.left = `-${slideIndex * 320}px`;
+  sliderContent.setAttribute('class', '');
+  sliderContent.classList.add(`slider-offset-${slideIndex}`);
+  // sliderContent.style.left = `-${slideIndex * 320}px`;
   for (const navDot of navDots) {
     navDot.classList.remove("selected");
   }
   navDots[slideIndex].classList.add("selected");
 };
+
+const resetInterval = () => {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(moveRight, 5000);
+};
+
+slideInterval = setInterval(moveRight, 5000);

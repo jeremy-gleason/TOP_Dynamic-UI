@@ -14,6 +14,23 @@
 #slider-content {
   display: flex;
   position: absolute;
+  transition: transform 300ms ease-in-out;
+}
+
+.slider-offset-0 {
+  transform: translate(0px);
+}
+
+.slider-offset-1 {
+  transform: translate(-320px);
+}
+
+.slider-offset-2 {
+  transform: translate(-640px);
+}
+
+.slider-offset-3 {
+  transform: translate(-960px);
 }
 
 .slider-img {
